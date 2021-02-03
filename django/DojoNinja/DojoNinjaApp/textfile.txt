@@ -1,0 +1,95 @@
+(djangoPy3Env) colby@Colbys-MacBook-Pro DojoNinja % python manage.py shell
+Python 3.8.6 (default, Oct  8 2020, 14:06:32) 
+[Clang 12.0.0 (clang-1200.0.32.2)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from DojoNinjaApp.models import *
+
+Dojo3 = Dojo.objects.create(name = "Athenas_dojo", city = "highland", state = "Indiana")
+
+Dojo1 = Dojo.objects.create(name = "jjs_dojo", city = "chicago", state = "Illinois")
+Dojo2 = Dojo.objects.create(name = "fast_dojo", city = "highland", state = "Indiana")
+Dojo3 = Dojo.objects.create(name = "Athenas_dojo", city = "highland", state = "Indiana")
+(1, {'DojoNinjaApp.Ninja': 0, 'DojoNinjaApp.Dojo': 1})
+>>> c = Dojo.objects.get(id=2)
+>>> d.delete()
+c = Dojo.objects.get(id=3)
+>>> c.delete()
+(1, {'DojoNinjaApp.Ninja': 0, 'DojoNinjaApp.Dojo': 1})
+>>> c.save()
+>>> c = Dojo.objects.get(id=4)
+>>> d.delete()
+
+c = Dojo.objects.get(id=5)
+c.delete()
+(1, {'DojoNinjaApp.Ninja': 0, 'DojoNinjaApp.Dojo': 1})
+>>> 
+
+c = Dojo.objects.get(id=6)
+c.delete()
+(1, {'DojoNinjaApp.Ninja': 0, 'DojoNinjaApp.Dojo': 1})
+
+Dojo1 = Dojo.objects.create(name = "jjs_dojo", city = "chicago", state = "Illinois")
+Dojo2 = Dojo.objects.create(name = "fast_dojo", city = "highland", state = "Indiana")
+Dojo3 = Dojo.objects.create(name = "Athenas_dojo", city = "highland", state = "Indiana")
+
+Ninja1 = Ninja.objects.create(fname = "Whitney", lname = "xyz", dojo = Dojo.objects.get(id=7))
+Ninja2 = Ninja.objects.create(fname = "Mike", lname = "abc", dojo = Dojo.objects.get(id=7))
+Ninja3 = Ninja.objects.create(fname = "Whitney", lname = "123", dojo = Dojo.objects.get(id=7))
+
+Ninja4 = Ninja.objects.create(fname = "Gerald", lname = "R", dojo = Dojo.objects.get(id=8))
+Ninja5 = Ninja.objects.create(fname = "Matt", lname = "m", dojo = Dojo.objects.get(id=8))
+Ninja6 = Ninja.objects.create(fname = "Whalter", lname = "w", dojo = Dojo.objects.get(id=8))
+
+Ninja7 = Ninja.objects.create(fname = "Michae;", lname = "R", dojo = Dojo.objects.get(id=9))
+Ninja8 = Ninja.objects.create(fname = "Maurice", lname = "ms", dojo = Dojo.objects.get(id=9))
+Ninja9 = Ninja.objects.create(fname = "Carl", lname = "a", dojo = Dojo.objects.get(id=9))
+
+Dojo10 = Dojo.objects.create(name = "Coding Dojo", city = "chicago", state = "Illinois")
+
+In [1]: from DojoNinjaApp.models import *
+
+In [2]: dojo1 = Dojo.objects.first()
+
+In [3]: print(dojo1.description)
+None
+
+In [4]: dojo1.descrption = "Fun stuff"
+
+In [5]: dojo1.save()
+
+In [6]: dojo2 = Dojo.objects.first()
+
+In [7]: print(dojo2.description)
+None
+
+In [8]: dojo1.description = "Fun Stuff"
+
+In [9]: dojo1.save()
+
+In [10]: dojo2 = Dojo.objects.first()
+
+In [11]: print(dojo2.description)
+Fun Stuff
+
+In [12]: kids = dojo2.Ninjas.all()
+
+In [13]: for x in kids:
+    ...:     print(x.name)
+    ...: 
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-13-792823d6c956> in <module>
+      1 for x in kids:
+----> 2     print(x.name)
+      3 
+
+AttributeError: 'Ninja' object has no attribute 'name'
+
+In [14]: for x in kids:
+    ...:     print(x.fname)
+    ...: 
+Whitney
+Mike
+
+Dojo10 = Dojo.objects.create(name = "Coding Dojo", city = "chicago", state = "Illinois")

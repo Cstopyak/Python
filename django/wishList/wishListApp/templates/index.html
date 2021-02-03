@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        </style>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <table>
+        <tr>
+          <th>Id</th>
+          <th>First Name</th>
+          <th>Action</th>
+        </tr>
+        {% for userObj in allUsr %}
+        <tr>
+          <td>{{userObj.id}}</td>
+          <td>{{userObj.first_name}}</td>
+          <td><a href="/users/{{userObj.id}}">View</a></td>
+        </tr>
+        {% endfor %}
+    
+      </table>
+      <hr>
+      <form action="/createUser" method="post">
+          {% csrf_token %}
+          <p>First Name: <input type="text" name="fname" id=""></p>
+          <p><input type="submit" value="Create User"></p>
+      </form>
+</body>
+</html>

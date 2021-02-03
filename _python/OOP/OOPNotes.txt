@@ -1,0 +1,5 @@
+classes will refer to blueprint
+objects are things that are created out of the class
+objetcs are instances of the class
+atrributes are names age points etc.
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books&Authors</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    
+
+    <h2> Add a Book</h2>
+    <!-- <p> {{AllBks}}</p> -->
+            <form action="" method="POST">
+                {% csrf_token %}
+                <p> Title: <input type="text" name="" id=""> </p>
+                <p> Description: <input type="text" name="" id=""> </p>
+                <p> <input type="submit" value="Add Book"></p>
+            </form>
+
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th> Action</th>
+            
+        </tr>
+        {% for x in AllBks %}
+        <tr>
+            <td>{{x.id}}</td>
+            <td>{{x.title}}</td>
+            <td><a href="/books/{{x.id}}">View</a></td>
+            
+        </tr>
+        {% endfor %}
+
+
+
+</body>
+
+</html>

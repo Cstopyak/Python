@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1> Hello {{loginUser.name}}</h1>
+
+    <p> {{AllItems}}</p>
+    <h2>HTML Table</h2>
+<!-- redbelt feature -->
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Added by</th>
+            <th>Date added</th>
+            <th>Action</th>
+        </tr>
+        {% for x in favitem %}
+        <tr>
+            <td> <a href="/dashboard/{{x.id}}"> {{x.item_name}}</td></a>
+            <td>{{x.created_item.name}}</td>
+            <td>{{x.created_at}}</td>
+            <td></td>
+        </tr>
+        {% endfor%}
+
+    </table>
+    <a href="/wish_item/create"> Add a new item</a>
+
+    <p> Items wanted: {{favitem}}</p>
+    <p> Items Unwanted: {{nonfavitem}}</p>
+
+    <h2> Items that weren't selected</h2>
+
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Added by</th>
+            <th>Date added</th>
+            <th>Action</th>
+        </tr>
+        {% for x in nonfavitem %}
+        <tr>
+            <td> <a href="/dashboard/{{x.id}}"> {{x.item_name}}</td></a>
+            <td>{{x.created_item.name}}</td>
+            <td>{{x.created_at}}</td>
+            <td> <a href="/addtofav/{{x.id}}"> Add to favorites</a></td>
+        </tr>
+        {% endfor%}
+
+    </table>
+</body>
+
+</html>

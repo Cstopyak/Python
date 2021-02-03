@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DojoSurvey</title>
+    <style>
+        #container {
+            width: 600px;
+            background-color: whitesmoke;
+            margin: 0px auto;
+        }
+        .box{
+            height: 80px;
+            border-radius: solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1> Hello Survey!</h1>
+
+        <form action="/submit" method="post">
+            {% csrf_token %}
+            <p> Your Name: <input type="text" name="name" id=""></p>
+
+            <p> Dojo Location: <select name="Location" id="">
+                    <option value="Please select from below">Please select from below</option>
+                    <option value="Chicago">Chicago</option>
+                    <option value="Washington">Washington</option>
+                    <option value="California">California</option>
+                </select></p>
+
+            <p> Favorite Language: <select name="FavLanguage" id="">
+                    <option value="Please select from below">Please select from below</option>
+                    <option value="Python">Python</option>
+                    <option value="java">Java</option>
+                    <option value="C#">C#</option>
+                </select></p>
+            
+                <p> Comment (optional): <textarea name="Comment" id=""></textarea> </p>
+            
+                <input type="submit" value="Submit">
+        </form>
+        <h3> hmm it looks like you have already voted times.</h3>
+    
+
+    </div>
+</body>
+
+</html>

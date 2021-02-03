@@ -1,0 +1,26 @@
+User.objects.create(name= "colby" , username= "colby", password= "11111111")
+
+
+item.objects.create(name= "colby" , username= "colby", password= "11111111")
+
+item.objects.create(item_name = "Iphone9", created_item = User.objects.get (id=1))
+
+item.objects.create(item_name = "Iphone9", created_item = User.objects.get (id=1))
+item.objects.create(item_name = "Macbook Pro", created_item = User.objects.get (id=1))
+item.objects.create(item_name = "Bike", created_item = User.objects.get (id=2))
+item.objects.create(item_name = "Hiking Blog", created_item = User.objects.get (id=2))
+
+
+**delete an item**
+c = item.objects.get(id=5)
+c.delete()
+
+** how to create many to many join***
+
+item.objects.get(id=1).wishlisted.add(User.objects.get(id=1))
+item.objects.get(id=1).wishlisted.add(User.objects.get(id=2))
+
+item.objects.get(id=6).wishlisted.add(User.objects.get(id=1))
+item.objects.get(id=7).wishlisted.add(User.objects.get(id=2))
+** we need to populate data so we can creat tables in html**
+

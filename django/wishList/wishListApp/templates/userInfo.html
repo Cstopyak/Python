@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{allItems}}</h1>
+    <h1>User info:{{oneUser.first_name}}</h1>
+   <p>This user was created on {{oneUser.created_at}}</p>
+   <p>Items this user wants for the holidays:</p>
+    <ul>
+   {% for itemObj in oneUser.items_favorited.all %}
+        <li>{{itemObj.name}}</li>
+   {% endfor %}
+    </ul>
+    <p>Select an item for this user to want for holidays:</p>
+    <form action="/favoriteItem/{{oneUser.id}}" method="post">
+        {% csrf_token %} 
+        <select name="selectedItem" id="">
+            {% for itemObj in allItems %}
+            <option value="{{itemObj.id}}">{{itemObj.name}}</option>
+            {% endfor %}
+        </select>
+        <p><input type="submit" value="Request Santa"></p>
+    </form>
+</body>
+</html>

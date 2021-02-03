@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <Style>
+        #container {
+            width: 800px;
+            height: 1000px;
+            background-color: whitesmoke;
+            margin: 0px auto;
+
+        }
+
+        .box {
+            width: 200px;
+            height: 60px;
+            background-color: tomato;
+            margin: 0px auto;
+        }
+
+        .box2 {
+            width: 300px;
+            height: 100px;
+            background-color: tomato;
+            margin: 0px auto;
+        }
+    </Style>
+</head>
+<div id="container">
+
+    <body>
+        <h1> Hello Time!</h1>
+        <div class="box"> The current time and date</div>
+        <br>
+        <div class="box2">
+            <h2>{{todaydate| date:"l F d, Y"}}</h2>
+            
+        </div>
+        <div class="box">
+            <h3> {{datetime}}</h3>
+        </div>
+
+        
+
+</div>
+<!--div container ends-->
+</body>
+
+</html>

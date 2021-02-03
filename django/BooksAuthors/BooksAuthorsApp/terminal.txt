@@ -1,0 +1,53 @@
+Book1 = Book.objects.create(title= "c#", description = "a tale of coding language")
+Book2 = Book.objects.create(title= "Java", description = "Java, not your average cup of coffee")
+Book3 = Book.objects.create(title= "Python", description = "Intro to python")
+Book4 = Book.objects.create(title= "PHP", description = "PHP coding language")
+Book5 = Book.objects.create(title= "Ruby", description = "a tale of coding language with rails")
+
+Author1 = Author.objects.create(first_name= "Jane", last_name= "Austen")
+Author2 = Author.objects.create(first_name= "Emily", last_name= "Dickinson")
+Author3 = Author.objects.create(first_name= "Fyodor", last_name= "Dov")
+Author4 = Author.objects.create(first_name= "Bill", last_name= "Shakespeare")
+Author5 = Author.objects.create(first_name= "Lau", last_name= "tzu")
+
+Author1= Author.objects.get(id=1)
+Author2= Author.objects.get(id=2)
+Author3= Author.objects.get(id=3)
+Author4= Author.objects.get(id=4)
+Author5= Author.objects.get(id=5)
+
+
+Book1= Book.objects.get(id=1)
+Book2= Book.objects.get(id=2)
+Book3= Book.objects.get(id=3)
+Book4= Book.objects.get(id=4)
+Book5= Book.objects.get(id=5)
+
+Author1.authors.add(Book2)
+
+
+Author1.Author.authors.add(Book1)
+
+Book2.authors.add(Author1)
+Book1.authors.add(Author1)
+Book1.authors.add(Author1)
+
+Book1.authors.add(Author2)
+Book2.authors.add(Author2)
+Book3.authors.add(Author2)
+
+Book1.authors.add(Author3)
+Book2.authors.add(Author3)
+Book3.authors.add(Author3)
+Book4.authors.add(Author3)
+
+Book1.authors.add(Author5)
+Book2.authors.add(Author5)
+Book3.authors.add(Author5)
+Book4.authors.add(Author5)
+Book5.authors.add(Author5)
+
+Book.objects.get(id=3)
+Book.objects.filter(id=3)
+
+Book.objects.get(id=3).__dict__

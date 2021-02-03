@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Edit the User number</h1>
+    <h2> {{UserInf.id}}</h2>
+
+    <form action="/User/{{UserInf.id}}/update" method="POST">
+        {% csrf_token %}
+        <p> First name: <input type="text" name="fname" id="" value="{{UserInf.fname}}"> </p>
+        <p> Last name: <input type="text" name="lname" id="" value="{{UserInf.lname}}"> </p>
+        <p> Email: <input type="text" name="email" id="" value="{{UserInf.email}}"> </p>
+        <p> Age: <input type="number" name="age" id="" value="{{UserInf.age}}"> </p>
+        <p> <input type="submit" value="Update User"></p>
+    </form>
+</body>
+</html>

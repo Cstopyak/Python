@@ -1,0 +1,7 @@
+user1 = User.objects.create(first_name="Allison", last_name= "P", age = 21)
+user2 = User.objects.create(first_name="Mitch", last_name= "S", age = 21)
+user3 = User.objects.create(first_name="Nathan", last_name= "B", age = 21)
+
+post2 = Post.objects.create(content = "that vegan moonshine though", creator = User.objects.get(id=1))
+post3 = Post.objects.create(content = "yo yo anybody still out here?", creator = User.objects.get(id=3))
+post2 = Post.objects.create(content = "imaa buyy you a drankkk ", creator = User.objects.get(id=2))

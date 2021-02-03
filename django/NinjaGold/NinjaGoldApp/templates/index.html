@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Gold</title>
+    <style>
+        #wrapper {
+            width: 1600px;
+            background-color: whitesmoke;
+            margin: 0px auto;
+            padding-left: 80px;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            padding-left: 80px;
+            border: solid black;
+            display: inline-block;
+        }
+
+        .Act {
+            width: 1150px;
+            height: 100px;
+            border: solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <h1> Hello ninja Miners!</h1>
+        <p> Your Gold:</p>
+
+        <div class="box">
+            <h2> Farm</h2>
+            <p> (earns 10-20 gold pieces)</p>
+            <form action="" method="POST">
+                {% csrf_token%}
+                <input type="submit" value="Find Gold!">
+            </form>
+
+        </div>
+
+        <div class="box">
+            <h2> Cave</h2>
+            <p> (earns 5-10 gold pieces)</p>
+            <form action="" method="POST">
+                {% csrf_token%}
+                <input type="submit" value="Find Gold!">
+            </form>
+        </div>
+
+        <div class="box">
+            <h2> House</h2>
+            <p> (earns 2-5 gold pieces)</p>
+            <form action="" method="POST">
+                {% csrf_token%}
+                <input type="submit" value="Find Gold!">
+            </form>
+        </div>
+
+        <div class="box">
+            <h2> Casino </h2>
+            <p> (earns/takes 0-50 gold pieces)</p>
+            <form action="" method="POST">
+                {% csrf_token%}
+                <input type="submit" value="Find Gold!">
+            </form>
+
+        </div>
+
+        <h3> Activities:</h3>
+        <div class="Act"></div>
+    </div>
+    <!--wrapper ends-->
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckerBoard</title>
+    <style>
+        .box1 {
+            /* width: 40px;
+            height: 40px; */
+            background-color: red;
+            /* margin: 0px auto;
+            padding: 0px auto;
+            display: inline-block; */
+        }
+        .box2{
+            /* width: 40px;
+            height: 40px; */
+            background-color: gray;
+            /* margin: 0px auto;
+            padding: 0px auto;
+            display: inline-block; */
+        }
+        table tr td{
+            width: 80px;
+            height: 80px;
+            margin: 0px;   
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to my CheckerBoard</h1>
+
+
+    
+    <table>
+    {% for x in range(2): %}
+        <tr>
+            {% for i in range(2): %}
+    <td class= "box1"> </td>
+    <td class= "box2"> </td>
+    {% endfor %}
+        </tr>
+        <tr>
+            {% for i in range(2): %}
+    <td class= "box2"> </td>
+    <td class= "box1"> </td>
+    {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+          
+
+   
+
+</body>
+
+</html>

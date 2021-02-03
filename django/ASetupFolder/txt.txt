@@ -1,0 +1,42 @@
+
+git clone https://github.com/Cstopyak/funtravels.git
+
+
+Gunicorn---
+gunicorn PythonExam.wsgi
+
+
+
+
+
+
+[Unit]
+Description=gunicorn daemon
+After=network.target
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/funtravels
+ExecStart=/home/ubuntu/funtravels/venv/bin/gunicorn --workers 3 --bind unix:/home/ubuntu/funtravels/PythonExam.sock PythonExam.wsgi:application
+[Install]
+WantedBy=multi-user.target
+
+
+
+server {
+  listen 80;
+  server_name 18.220.95.32;
+  location = /favicon.ico { access_log off; log_not_found off; }
+  location /static/ {
+      root /home/ubuntu/funtravels;
+  }
+  location / {
+      include proxy_params;
+      proxy_pass http://unix:/home/ubuntu/funtravels/PythonExam.sock;
+  }
+}
+
+
+sudo ln -s /etc/nginx/sites-available/PythonExam /etc/nginx/sites-enabled
+
+sudo vim /etc/nginx/sites-available/PythonExam

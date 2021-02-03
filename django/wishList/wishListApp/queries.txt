@@ -1,0 +1,22 @@
+user1 = User.objects.create(first_name = "Jacob")
+user2 = User.objects.create(first_name = "Mitch")
+user3 = User.objects.create(first_name = "James")
+user4 = User.objects.create(first_name = "Colby")
+user5 = User.objects.create(first_name = "Tony")
+user6 = User.objects.create(first_name = "Shad")
+
+
+
+item1 = Item.objects.create(name = "Longboard", description = "A very tactical board to glide thru")
+item2 = Item.objects.create(name = "PS5", description = "Lorem Epsum Dorem")
+item3 = Item.objects.create(name = "Xbox", description = "Lorem Epsum Dorem")
+item4 = Item.objects.create(name = "Macbook Pro", description = "Lorem Epsum Dorem")
+item5 = Item.objects.create(name = "New Monitor", description = "Lorem Epsum Dorem")
+
+
+
+
+
+c = Item.objects.get(id=11)
+c.description = "Gota get this before its gone!"
+c.save()

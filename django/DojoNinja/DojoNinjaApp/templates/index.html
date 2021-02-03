@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo's and Ninja's</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        #wrapper {
+            width: 1200px;
+            background-color: whitesmoke;
+            margin: 0px auto;
+        }
+
+        .box {
+            width: 500px;
+
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <body>
+        <div id="wrapper">
+            <h1> All Users</h1>
+            <!-- <p> {{allModel_orm}}</p>
+            <table>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th> Email</th>
+                    <th> Age</th>
+                </tr>
+                {% for x in allModel %}
+                <tr>
+                    <td>{{x.fname}}</td>
+                    <td>{{x.lname}}</td>
+                    <td>{{x.email}}</td>
+                    <td>{{x.age}}</td>
+                </tr>
+    
+    
+                {% endfor %}
+            </table> -->
+            <div class="box">
+                <!-- <hr> -->
+                <h2> Add a Dojo</h2>
+                <form action="/AddDojo" method="POST">
+                    {% csrf_token %}
+                    <p> Name: <input type="text" name="nameinput" id=""> </p>
+                    <p> City: <input type="text" name="cityinput" id=""> </p>
+                    <p> State: <input type="text" name="stateinput" id=""> </p>
+
+                    <p> <input type="submit" value="Add"></p>
+                </form>
+            </div>
+
+            <div class="box">
+
+                <h2> Add a Ninja</h2>
+                <form action="/AddNinja" method="POST">
+                    {% csrf_token %}
+                    <p> First Name: <input type="text" name="fnameinput" id=""> </p>
+                    <p> Last Name: <input type="text" name="lnameinput" id=""> </p>
+                    <p> Dojo: <select name="dojoinput" id="">
+                                {% for Dojoobj in AllInfo%}
+                                <option value="{{Dojoobj.id}}">{{Dojoobj.name}}</option>
+                                {% endfor %}
+
+                        </select> </p>
+
+                    <p> <input type="submit" value="Add"></p>
+                </form>
+            </div>
+
+            <hr>
+            <h2> All the Dojos</h2>
+            <!-- <p>{{AllInfo}}</p> -->
+            {% for x in AllInfo %}
+            <p> {{x.name}} </p>
+            <ul>
+                {% for ninjaObj in x.Ninjas.all %}
+                <li>{{ninjaObj.fname}} {{ninjaObj.lname}}</li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
+        </div>
+    </body>
+
+</html>

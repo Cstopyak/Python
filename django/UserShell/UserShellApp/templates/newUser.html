@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> template for user</h1>
+
+    <div class="box">
+        <hr>
+        <h2> Add a User</h2>
+        <form action="/new" method="POST">
+            {% csrf_token %}
+            <p> First name: <input type="text" name="fname" id=""> </p>
+            <p> Last name: <input type="text" name="lname" id=""> </p>
+            <p> Email: <input type="text" name="email" id=""> </p>
+            <p> Age: <input type="number" name="age" id=""> </p>
+            <p> <input type="submit" value="Add"></p>
+        </form>
+    </div>
+    
+</body>
+</html>
